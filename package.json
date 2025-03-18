@@ -1,0 +1,17 @@
+{
+  "name": "js_practices",
+  "version": "1.0.0",
+  "description": "Javascript Practices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "Algorithms",
+    "Problems",
+    "DSA"
+  ],
+  "author": "Darshan Babariya",
+  "license": "ISC"
+}

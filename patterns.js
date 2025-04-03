@@ -504,3 +504,175 @@ function genPattern18(n) {
 
 //=======================================================================================================================================================
 
+// Input Format: N = 3
+// Result: 
+
+// ******
+// **  **
+// *    *
+// *    *
+// **  **
+// ******
+
+
+function genPattern19(n) {
+  let line = '';
+  for (i = 1; i <= n; i++) {
+
+    for (a = 1; a <= (n-i+1); a++) {
+      line += " * "
+    }
+
+    for(b= 1; b <i; b++){
+      line += " _ ".repeat(2)
+    }
+
+    for(d=n; d >= i; d--){
+      line += " * "
+    }
+        
+    line += '\n\n';
+  }
+  for (i = 1; i <= n; i++) {
+
+    for (a = 1; a <= (i); a++) {
+      line += " * "
+    }
+
+    for(d=n; d > i; d--){
+      line += " _ ".repeat(2)
+    }
+    
+    for (c = 1; c <= (i); c++) {
+      line += " * "
+    }
+        
+    line += '\n\n';
+  }
+    console.log(line);
+}
+
+function genPattern19alt(n) {
+  let line = '';
+  let starCnt= n;
+  let spaceCnt = 0
+  for (i = 1; i <= 2*n; i++) {
+    line += " * ".repeat(starCnt) + "   ".repeat(spaceCnt) + " * ".repeat(starCnt)
+    line += '\n\n';
+
+    if (i < n ){
+      starCnt--;
+      spaceCnt+=2
+    }
+    if( i > n ){
+      starCnt++;
+      spaceCnt-=2;
+    }
+    
+  }
+  console.log(line);
+}
+
+// genPattern19alt(4) 
+
+
+//=======================================================================================================================================================
+
+// Input Format: N = 3
+// Result: 
+// *    *
+// **  **
+// ******
+// **  **
+// *    *
+// console.log(` after at  i -> ${i} ==>  start starCnt -> ${starCnt} , spaceCnt -> ${spaceCnt} `)
+
+function genPattern20(n) {
+  let line = '';
+  let starCnt= 1;
+  let spaceCnt = 2*(n -1)
+  for (i = 1; i <= 2*n - 1; i++) {
+
+    line += " * ".repeat(starCnt) + "   ".repeat(spaceCnt) + " * ".repeat(starCnt)
+    line += '\n\n';
+
+    if (i < n ){
+      starCnt++;
+      spaceCnt-=2;
+    }else{
+      starCnt--;
+      spaceCnt+=2;
+    }
+  }
+  console.log(line);
+}
+
+// genPattern20(4)
+
+
+//=======================================================================================================================================================
+
+// Input Format: N = 3
+// Result: 
+// ***
+// * *
+// ***
+
+// Input Format: N = 6
+// Result:   
+// ******
+// *    *
+// *    *
+// *    *
+// *    *
+// ******
+
+
+function genPattern21(n) {
+  let line = '';
+  for (i = 1; i <= n; i++) {
+    let starCnt = 1
+    line += `${" * ".repeat(starCnt)}${ i == 1 || i == n ? " * ".repeat(n-2) : "   ".repeat(n-2) }${" * ".repeat(starCnt)}`
+    line += '\n\n';
+
+  }
+  console.log(line);
+}
+
+// genPattern21(5)
+
+
+//=======================================================================================================================================================
+
+// Input Format: N = 3
+// Result: 
+// 3 3 3 3 3 
+// 3 2 2 2 3 
+// 3 2 1 2 3 
+// 3 2 2 2 3 
+// 3 3 3 3 3
+
+
+function genPattern22(n) {
+  let line = '';
+  for (i = 1; i <= 2*n -1; i++) {
+
+    for (j = 1; j <= 2*n -1; j++) {
+      
+      let top = i-1;
+      let bottom = j-1;
+      let right = (2*n -1 ) - j ;
+      let left = (2*n -1 ) - i;
+
+      line += ` ${n- Math.min(Math.min(top,bottom), Math.min(left,right))} ` + "   "
+
+    }
+
+    line += '\n\n';
+  }
+  console.log(line);
+}
+
+genPattern22(3)
+
+// 0 -> 0, 
